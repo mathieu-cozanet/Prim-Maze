@@ -1,3 +1,5 @@
+/*Done by Mathieu COZANET MERLINGEAS*/
+
 // Get references to DOM elements
 const mazeContainer = document.getElementById('maze');
 const moveCountDisplay = document.getElementById('moveCount');
@@ -130,6 +132,41 @@ window.addEventListener('keydown', (e) => {
             break;
     }
 });
+
+function setupTouchControls() {
+    let startX, startY;
+
+    mazeContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    });
+
+    mazeContainer.addEventListener('touchmove', (e) => {
+        const dx = e.touches[0].clientX - startX;
+        const dy = e.touches[0].clientY - startY;
+
+        if (Math.abs(dx) > Math.abs(dy)) {
+            // Horizontal movement
+            if (dx > 0) {
+                movePlayer(1, 0); // Right
+            } else {
+                movePlayer(-1, 0); // Left
+            }
+        } else {
+            // Vertical movement
+            if (dy > 0) {
+                movePlayer(0, 1); // Down
+            } else {
+                movePlayer(0, -1); // Up
+            }
+        }
+        e.preventDefault(); // Prevent scrolling
+    });
+}
+
+// Call this function to set up touch controls
+setupTouchControls();
+
 
 // Function to reset the game
 function resetGame() {

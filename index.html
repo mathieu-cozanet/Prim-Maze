@@ -9,17 +9,18 @@
 <body>
     <h1>Jeu de Labyrinthe</h1>
     <div id="controls">
-        <label for="gridSize">Taille de la grille :</label>
-<select id="gridSize">
-    <option value="15">15x15</option>
-    <option value="21">21x21</option>
-    <option value="31">31x31</option>
-    <option value="41">41x41</option>
-    <option value="51">51x51</option>
-</select>
-<button id="generateMaze">Nouveau labyrinthe</button>
-<button id="showSolution">Voir la solution</button>
+        <label for="gridSize" class="taille">Taille de la grille : </label>
+        <select id="gridSize">
+            <option value="15">15x15</option>
+            <option value="21">21x21</option>
+            <option value="31">31x31</option>
+            <option value="41">41x41</option>
+            <option value="51">51x51</option>
+        </select>
+        <button id="generateMaze">Nouveau labyrinthe</button>
+        <button id="showSolution">Voir la solution</button>
     </div>
+    <h2>Utilisez les fleches pour déplacer le curseur</h2>
     <div id="stats">
         <p>Mouvements : <span id="moveCount">0</span></p>
         <p>Temps : <span id="timer">0</span>s</p>

@@ -92,6 +92,7 @@ button {
     padding: 10px 20px; /* Espacement à l'intérieur du bouton */
     cursor: pointer; /* Change le curseur sur survol */
     transition: background-color 0.3s; /* Transition pour le changement de couleur */
+    margin-left: 5px;
 }
 
 button:hover {
@@ -113,4 +114,26 @@ button:hover {
     100% {
         opacity: 1;
     }
+}
+
+#gridSize {
+    margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+    #maze {
+        width: 90vw; /* 90% of the viewport width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    .cell {
+        width: 15px; /* Adjust the cell size */
+        height: 15px; /* Adjust the cell size */
+        gap: 1px; /* Adjust the gap */
+    }
+
+    body {
+        font-size: 0.9rem; /* Smaller on mobile */
+    }
+
 }
